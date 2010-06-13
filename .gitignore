@@ -1,3 +1,4 @@
 *.pyc
 *.db
 *.swp
+exact_clone/assets/*

@@ -1,0 +1,27 @@
+{% extends 'gallery/category_base.html' %}
+
+{% block category_content %}
+
+<h3 style="margin-left: 10px" class="categoryHeading">{{selected_sub_cat.title}}</h3>
+
+<ul class="horizontal_list gallery_container">
+    {% for photo in selected_sub_cat.photo_set.all %}	
+	<li class="image horizontal_item">
+        <ul class="vertical_list">
+            <li class="vertical_item thumb_container">
+            <a href="{% url exact_clone.gallery.views.detail photo.slug %}"  ><img alt="{{photo.title}}" src="{{photo.thumb.url}}" /></a>
+            </li>
+            <li class="vertical_item">
+	  <p class="prodImageLabel">
+          {{photo.title}}<br/>
+	    <strong>$499.99</strong>
+	  </p>
+          </li>
+        </ul>
+
+	</li>
+    {% endfor %}
+	
+</ul>
+
+{% endblock %}

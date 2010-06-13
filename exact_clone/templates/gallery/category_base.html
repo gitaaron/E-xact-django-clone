@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="plate" class="fixClear">
+	  <div id="plateContent" class="fixClear">
+
+	    <div id="leftSideMenu">
+	      <div class="sideMenuContentWrap">
+
+		<div class="sideMenuContent">
+                    <h3 class="categoryHeading">{{category.title}}</h3>
+                    {% for sub_cat in category.secondarycategory_set.all %}
+                    <a href="{% url exact_clone.gallery.views.index category.slug sub_cat.slug %}" {% ifequal sub_cat.slug selected_sub_cat.slug %}class="highlight"{% endifequal %}>
+                        {{sub_cat.title}}
+                    </a>
+                    <br />
+                    {% endfor %}
+
+                </div>
+	      </div>
+	      <div class="sideMenuEnd">
+
+	      </div>
+	    </div>                  <!-- END leftSideMenu -->
+
+	    <div id="content">
+	      <div id="contentContent" class="fixClear">
+		<div id="contentVertical" class="fixClear">
+		</div>
+
+                {% block category_content %}
+                {% endblock %}
+
+	      </div>
+	      <div id="contentEnd">
+	      </div>
+	    </div>                  <!-- END content -->
+
+	  </div>
+	  <div id="plateEnd">
+	  </div>
+	</div>                      <!-- END plate -->
+
+
+
+
+{% endblock %}

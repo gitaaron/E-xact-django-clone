@@ -39,11 +39,13 @@ USE_I18N = True
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
 MEDIA_ROOT = '%s/site_media/' % APPLICATION_ROOT
+UPLOAD_ROOT = '%s/assets/' % APPLICATION_ROOT
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
 MEDIA_URL = '/site_media/'
+UPLOAD_URL = '/assets/' 
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
@@ -75,4 +77,11 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
+    'django.contrib.admin',
+    'exact_clone.gallery',
+)
+
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'exact_clone.gallery.context_processors.category_list',
 )

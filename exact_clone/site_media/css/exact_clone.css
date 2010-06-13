@@ -1,3 +1,15 @@
+ul.vertical_list { list-style-type:none; float:left; margin:0; padding:0;}
+ul.vertical_list li.vertical_item { float:left; clear:both; }
+ul.horizontal_list { list-style-type:none; float:left; margin:0; padding:0;}
+ul.horizontal_list li.horizontal_item { float:left; }
+li.image { text-align:center; }
+li.thumb_container { height:130px; }
+
+ul.gallery_container ul, ul.gallery_container li { width: 175px; }
+
+
+
+
 body {
   background: #ffffff url("/site_media/img/body-top.jpg") repeat-x top left;
   margin: 0px;

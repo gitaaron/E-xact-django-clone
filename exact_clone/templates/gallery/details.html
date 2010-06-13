@@ -1,0 +1,61 @@
+{% extends 'gallery/category_base.html' %}
+
+{% block category_content %}
+
+
+<div id="contentContentInfo">
+  <!-- Sometimes, you just have to break down and use a table -->
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td id="prodDetailLeft"> 
+          <img alt="{{photo.title}}" src="{{photo.big.url}}"  /></a>
+      </td>
+      <td id="prodDetailRight">
+          <b>{{photo.title}}</b>
+
+          <p>{{photo.description}}</p>
+        Price: <span class="catalogprice">$499.99</span><br/>
+        <br/>
+        <form action="/store/add_to_cart/29" method="post" onsubmit="new Ajax.Updater('update', '/store/add_to_cart/29', {asynchronous:true, evalScripts:true, onComplete:function(request){complete()}, onLoading:function(request){loading()}, parameters:Form.serialize(this)}); return false;">
+        <select id="quantity" name="quantity"><option value="1" selected="selected">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="1.1">1.1</option>
+<option value="1.9">1.9</option></select>
+
+        <input name="commit" type="submit" value="Add to Cart" />
+        </form>
+        <br/>
+        <div id="update" style="height: 20px">&nbsp;</div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <br/>
+
+      </td>
+    </tr>
+  </table>
+  <br/>
+  <div id="prodDetailBottom">
+
+    <hr/>
+    <span>
+      <a href="/store/index?continue=true">CONTINUE SHOPPING</a>
+      &nbsp;&nbsp;&nbsp;
+      <a href="/store/display_cart">CHECKOUT</a>
+    </span>
+  </div>
+</div>
+
+
+
+{% endblock %}

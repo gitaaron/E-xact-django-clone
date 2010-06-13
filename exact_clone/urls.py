@@ -3,8 +3,8 @@ from django.views.generic.simple import direct_to_template
 from django.conf import settings
 
 # Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = patterns('',
     # Example:
@@ -15,13 +15,22 @@ urlpatterns = patterns('',
     # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    # (r'^admin/', include(admin.site.urls)),
+    (r'^admin/', include(admin.site.urls)),
 
     # Media files (only for development)
     (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', \
                     {'document_root': '%s/site_media' 
                      % settings.APPLICATION_ROOT}),
 
+    # Shop assets uploaded via admin (only for development)
+    (r'^assets/(?P<path>.*)$', 'django.views.static.serve', \
+                    {'document_root': '%s/assets' 
+                     % settings.APPLICATION_ROOT}),
 
-    ('^$', direct_to_template, {'template': 'index.html'}),
+
+
+    (r'^$', direct_to_template, {'template': 'index.html'}),
+    (r'^category/(?P<primary_slug>[-\w]+)$', 'exact_clone.gallery.views.index'),
+    (r'^category/(?P<primary_slug>[-\w]+)/(?P<secondary_slug>[-\w]+)$', 'exact_clone.gallery.views.index'),
+    (r'^show/(?P<photo_slug>[-\w]+)$', 'exact_clone.gallery.views.detail'),
 )
