@@ -79,6 +79,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.admin',
     'exact_clone.gallery',
+    'exact_clone.shop',
 )
 
 
@@ -88,4 +89,5 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.debug',
     'django.core.context_processors.i18n',
     'exact_clone.gallery.context_processors.category_list',
+    'exact_clone.shop.context_processors.cart',
 )

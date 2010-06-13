@@ -14,25 +14,30 @@
           <b>{{photo.title}}</b>
 
           <p>{{photo.description}}</p>
-        Price: <span class="catalogprice">$499.99</span><br/>
+        {% if photo.product %}
+        {% with photo.product as product %}
+        Price: <span class="catalogprice">${{product.price}}</span><br/>
         <br/>
-        <form action="/store/add_to_cart/29" method="post" onsubmit="new Ajax.Updater('update', '/store/add_to_cart/29', {asynchronous:true, evalScripts:true, onComplete:function(request){complete()}, onLoading:function(request){loading()}, parameters:Form.serialize(this)}); return false;">
-        <select id="quantity" name="quantity"><option value="1" selected="selected">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-<option value="9">9</option>
-<option value="10">10</option>
-<option value="1.1">1.1</option>
-<option value="1.9">1.9</option></select>
-
-        <input name="commit" type="submit" value="Add to Cart" />
+        <form action="{% url exact_clone.shop.views.add_item %}" method="post" >
+            <select id="quantity" name="quantity">
+                <option value="1" selected="selected">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <input name="product" type="hidden" value="{{product.id}}" />
+            <input name="commit" type="submit" value="Add to Cart" />
         </form>
+        {% endwith %}
+        {% else %}
+        <p>Not currently in stock</p>
+        {% endif %}
         <br/>
         <div id="update" style="height: 20px">&nbsp;</div>
       </td>

@@ -4,8 +4,11 @@
 
 <h3 style="margin-left: 10px" class="categoryHeading">{{selected_sub_cat.title}}</h3>
 
+
+{% with selected_sub_cat.photo_set.all as photos %}
+{% if photos %}
 <ul class="horizontal_list gallery_container">
-    {% for photo in selected_sub_cat.photo_set.all %}	
+    {% for photo in photos %}	
 	<li class="image horizontal_item">
         <ul class="vertical_list">
             <li class="vertical_item thumb_container">
@@ -20,8 +23,14 @@
         </ul>
 
 	</li>
+
     {% endfor %}
 	
 </ul>
+{% else %}
+<h3>No products available.</h3>
+{% endif %}
+{% endwith %}
+
 
 {% endblock %}

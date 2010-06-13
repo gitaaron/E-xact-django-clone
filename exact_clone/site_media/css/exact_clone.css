@@ -168,11 +168,18 @@ h3 {
   height: 5px;
 }
 
-#content {
+#content_big, #content {
   float: left;
   background: transparent url("/site_media/img/box-576-top.gif") no-repeat top left;
+}
+#content {
   width: 581px;
 }
+
+#content_big {
+  width:766px; 
+}
+
 #contentVertical {
   float: left;
   height: 500px;

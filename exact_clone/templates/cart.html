@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load shop_utils %}
+
+{% block content %}
+<div id="plate" class="fixClear">
+	  <div id="plateContent" class="fixClear">
+
+
+	    <div id="content_big" >
+	      <div id="contentContent" class="fixClear">
+		<div id="contentVertical" class="fixClear">
+		</div>
+				<div id="contentContentInfo">
+  <h3 class="categoryHeading">SHOPPING CART</h3>
+
+{% if cart.is_empty %} 
+<h2>The shopping cart is empty.</h2>
+{% else %}
+  <table cellpadding="10" cellspacing="0" style="width: 100%;">
+    <tr class="cartTitle">
+      <td colspan="2">Description</td>
+      <td>Qty</td>
+      <td style="text-align: right">Each</td>
+      <td style="text-align: right">Total</td>
+    </tr>
+
+    {% for item in cart.cartitem_set.all %}
+    {% with item.product as product %}
+    {% with product.photo as photo %}
+      <tr>
+      <td width="100">
+          <a href="{% url exact_clone.gallery.views.detail photo.slug %}"><img alt="{{photo.title}}" src="{{photo.thumb.url}}" /></a>
+      </td>
+      <td style="text-align: left">
+          <a href="{% url exact_clone.gallery.views.detail photo.slug %}">{{photo.title}}</a>
+      </td>
+      <td>
+          {{item.quantity}}
+      </td>
+      <td align="right">
+          ${{item.product.price|floatformat:2}}
+      </td>
+      <td align="right">${{item.line_item_total|floatformat:2}}</td>
+    </tr>
+    {% endwith %}
+    {% endwith %}
+    {% endfor %}
+      <tr>
+      <td colspan="4" align="right">
+	Shipping:
+      </td>
+
+      <td align="right">${{cart.shipping|floatformat:2}}</td>
+    </tr>
+    <tr>
+      <td colspan="4" align="right"><strong>Subtotal:</strong></td>
+      <td id="subTotalCell" align="right"><strong>${{cart.sub_total|floatformat:2}}</strong></td>
+    </tr>
+    <tr>
+
+      <td colspan="4" align="right">
+	<strong>Taxes:</strong>
+      </td>
+      <td class="totals" align="right"><strong>${{cart.tax_amount|floatformat:2}}</strong></td>
+    </tr>
+    <tr>
+      <td colspan="4" align="right"> <strong>Total:</strong> </td>
+
+      <td id="totalCell" align="right"><strong>${{cart.total|floatformat:2}}</strong></td>
+    </tr>
+  </table>
+{% endif %}
+    
+  <div id="cartMenu">
+    <hr/>
+    <a href="/">CONTINUE SHOPPING</a>&nbsp;&nbsp;&nbsp;
+    
+    <a href="{% url exact_clone.shop.views.empty_cart %}">EMPTY CART</a>&nbsp;&nbsp;&nbsp;
+
+    <a href="{% url exact_clone.shop.views.checkout %}">CHECKOUT</a>
+
+    
+  </div>
+</div>
+
+	      </div>
+	      <div id="contentEnd">
+	      </div>
+	    </div>                  <!-- END content -->
+
+	  </div>
+	  <div id="plateEnd">
+	  </div>
+	</div>                      <!-- END plate -->
+
+{% endblock %}

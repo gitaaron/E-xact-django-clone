@@ -13,7 +13,7 @@
       <div id="header" class="fixClear">
 	<div id="headerLogo">
 
-	  <a href="/store/welcome"><img alt="E-xact Transactions" src="/site_media/img/merchant_logo.gif" /></a>
+	  <a href="/"><img alt="E-xact Transactions" src="/site_media/img/merchant_logo.gif" /></a>
 	</div>
 	<div id="headerContent">
 	  &nbsp;
@@ -25,14 +25,18 @@
 
 	  <table class="menuTable" cellspacing="0" cellpadding="0">
 	    <tr>
-	      <td><a href="/store/welcome">HOME</a></td>
+	      <td><a href="/">HOME</a></td>
               <td><a href="">REFUND POLICY</a></td>
               <td><a href="">HELP</a></td>
               <td id="topCartLink" class="cartIcon">
-                <a href="/store/display_cart">SHOPPING CART</a>
+                  <a href="{% url exact_clone.shop.views.display_cart %}">SHOPPING CART</a>
 
                 <span id="topCartSummary">
-                 (0 items)
+                    {% if cart.is_empty %}
+                        (0 items)
+                    {% else %}
+                    ({{cart.num_items}} {% ifequal cart.num_items 1 %}item{% else %}items{% endifequal %}, ${{cart.sub_total}})
+                    {% endif %}
                 </span>
               </td>
 	    </tr>

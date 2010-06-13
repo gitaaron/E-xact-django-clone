@@ -33,4 +33,8 @@ urlpatterns = patterns('',
     (r'^category/(?P<primary_slug>[-\w]+)$', 'exact_clone.gallery.views.index'),
     (r'^category/(?P<primary_slug>[-\w]+)/(?P<secondary_slug>[-\w]+)$', 'exact_clone.gallery.views.index'),
     (r'^show/(?P<photo_slug>[-\w]+)$', 'exact_clone.gallery.views.detail'),
+    (r'^shop/display_cart$', 'exact_clone.shop.views.display_cart'),
+    (r'^shop/add_item$', 'exact_clone.shop.views.add_item'),
+    (r'^shop/checkout$', 'exact_clone.shop.views.checkout'),
+    (r'^shop/empty_cart$', 'exact_clone.shop.views.empty_cart'),
 )
