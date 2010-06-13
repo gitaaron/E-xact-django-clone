@@ -1,0 +1,321 @@
+body {
+  background: #ffffff url("/site_media/img/body-top.jpg") repeat-x top left;
+  margin: 0px;
+  padding: 20px;
+  font-family: arial, helvetica, tahoma, verdana, sans-serif;
+  font-size: 12px;
+  color: #333333;
+}
+a {
+  text-decoration: none;
+  color: #333333;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  border: 0;
+}
+h3 {
+  font-size: 15px;
+  font-weight: normal;
+  margin: 5px 0px 10px 0px;
+}
+
+/* Layout fix for moz */
+.fixClear:after {
+  content: ".";
+  display: block;
+  height: 0px;
+  clear: both;
+  visibility: hidden;
+  width: 0px;
+}
+
+/* For IE-mac */
+* html .fixClear {
+  height: 1%;
+}
+#notice {
+  border: 2px solid #004a9b;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: #f0f0f0;
+  font: bold smaller sans-serif;
+}
+
+
+/* principle container div */
+#wrap {
+  width: 804px;
+  margin: 0px auto;
+  padding: 0px;
+  clear: both;
+}
+
+#header {
+  background: transparent;
+  margin: 0px;
+  padding: 0px;
+}
+#headerLogo {
+  float: left;
+  margin: 0px;
+  padding: 0px;
+}
+#headerContent {
+  float: right;
+  margin: 0px;
+  padding: 10px;
+}
+
+#topMenu {
+  background: transparent;
+  height: 30px;
+}
+#topMenuContent {
+  font-size: 9px;
+  padding-top: 10px;
+}
+#topCartLink {
+  height: 20px;
+}
+#topCartSummary {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+
+#categories {
+  background: url("/site_media/img/categories-back.jpg") no-repeat top left;
+  padding: 0px;
+  height: 44px;
+}
+#categoriesContent {
+  padding-top: 14px;
+}
+#categoriesContent a {
+  color: #004a9b;
+  text-decoration: none;
+  font-weight: bold;
+}
+#categoriesContent a:hover {
+  text-decoration: underline;
+}
+
+.menuTable {
+  table-layout: fixed;
+  width: 786px;
+  text-align: center;
+  margin-left: 7px;
+}
+
+/* The 'plate' div contains the nav sideboxes and main content box */
+#plate {
+/*  background: url("/images/content-wrap-top.jpg") no-repeat top left; */
+  margin: 0px;
+  padding-top: 13px;
+}
+#plateContent {
+/*  background: url("/images/content-wrap-middle.jpg") repeat-y top left; */
+  margin: 0px;
+  padding: 5px 0px 5px 18px;
+}
+#plateEnd {
+  /*background: url("/images/content-wrap-bottom.jpg") no-repeat top left; */
+  height: 13px;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* The 'welcomePlate' div contains the welcome splash content */
+
+#welcomePlate {
+  padding: 0px;
+  margin-left: 18px;
+}
+
+
+#leftSideMenu {
+  float: left;
+  background: transparent url("/site_media/img/box-180-top.gif") no-repeat top left;
+  width: 180px;
+  margin-right: 10px;
+  line-height: 17px;
+}
+.sideMenuContentWrap {
+  margin-top: 5px;
+  background: #ffffff;
+}
+.sideMenuContent {
+  padding: 1px 10px 10px 10px;
+}
+.sideMenuEnd {
+  background: transparent url("/site_media/img/box-180-bottom.gif") no-repeat top left;
+  height: 5px;
+}
+
+#content {
+  float: left;
+  background: transparent url("/site_media/img/box-576-top.gif") no-repeat top left;
+  width: 581px;
+}
+#contentVertical {
+  float: left;
+  height: 500px;
+  visibility: hidden;
+  display: block;
+}
+#contentContent {
+  margin-top: 5px;
+  background: #ffffff;
+  padding: 1px 0px;
+}
+#contentContentInfo {
+  padding: 1px 10px 10px 10px;
+}
+#contentEnd {
+  background: transparent url("/site_media/img/box-576-bottom.gif") no-repeat top left;
+  height: 5px;
+}
+
+#footer {
+  background: url("/site_media/img/footer-back.gif") no-repeat top left;
+  height: 30px;
+  width: 786px;
+  margin-top: 10px;
+  margin-left: 7px;
+}
+#footerContent {
+  padding-top: 6px;
+  margin-left: -7px;
+  font-size: 10px;
+}
+#footerContent a {
+  text-decoration: none;
+}
+
+#prodDetailLeft {
+  width: 194px;
+}
+#prodDetailRight  {
+  width: 352px;
+  padding-left: 10px;
+  padding-top: 10px;
+  vertical-align: top;
+}
+#prodDetailBottom {
+  text-align: right;
+}
+#prodDetailBottom a:hover {
+  text-decoration: underline;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+.fieldWithErrors {
+  border: blue 3px solid;
+  padding: 0px;
+  margin: 0px;
+}
+
+.indent {
+  padding: 20px;
+}
+
+
+#leftSideMenu a {
+  text-decoration: none;
+}
+#leftSideMenu a:hover {
+  text-decoration: underline;
+}
+
+
+table.compactList {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.compactList td {
+  padding: 0px;
+  margin: 0px;
+  vertical-align: top;
+  text-align: center;
+  background: white;
+}
+.compactList .image {
+  border: 1px #cdcdcd solid;
+  width: 144px;
+}
+
+.categoryHeading {
+  margin-bottom: 30px;
+}
+
+.highlight {
+  color: #004a9b;
+  font-weight: bold;
+}
+
+.cartTitle {
+  background: #f6f6f6;
+  height: 20px;
+}
+.cartTitle td {
+  border-top: 1px #cdcdcd solid;
+  border-bottom: 1px #cdcdcd solid;
+}
+
+.cartTitle td {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+td.prodImageLabel {
+  padding-bottom: 10px;
+}
+
+#subTotalCell {
+  border-top: 1px solid #333333;
+}
+
+#totalCell {
+  border-top: 1px solid #333333;
+  border-bottom: 2px solid #333333;
+  text-align: right;
+}
+#cartMenu {
+  padding-top: 20px;
+  text-align: right;
+}
+#cartMenu a:hover {
+  text-decoration: underline;
+}
+
+.cartIcon {
+  background: url("/site_media/img/cart.gif") no-repeat left;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.bulletBlue {
+  background: url("/site_media/img/bullet_blue.gif") no-repeat left;
+  padding-left: 16px;
+  font-size: 9px;
+}
+.checkMark {
+  background: url("/site_media/img/accept.gif") no-repeat left;
+  padding-left: 20px;
+}
+.loading {
+  background: url("/site_media/img/circle-small.gif") no-repeat left;
+  padding-left: 20px;
+}
+
+
