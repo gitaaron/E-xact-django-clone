@@ -3,7 +3,7 @@ Taken from the satchmo project.
 '''
 from decimal import Decimal, ROUND_DOWN, InvalidOperation, getcontext
 
-def round_decimal(val='0', places=None, roundfactor='0', normalize=True):
+def round_decimal(val='0', places=None, roundfactor='0', normalize=False):
     """
     PARTIAL UNIT ROUNDING DECIMAL
     Converts a valid float, integer, or string to a decimal number with a specified

@@ -2,3 +2,4 @@
 *.db
 *.swp
 exact_clone/assets/*
+exact_clone/private_settings.py

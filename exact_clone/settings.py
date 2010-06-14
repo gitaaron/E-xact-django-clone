@@ -91,3 +91,13 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'exact_clone.gallery.context_processors.category_list',
     'exact_clone.shop.context_processors.cart',
 )
+try:
+    from private_settings import *
+except ImportError: # populate these with your own vars
+    PAYMENT_PAGE_VARS = {
+            'x_login' : None, # can be found on the payment page you created
+            'x_fp_sequence' : None, # something you generate on your own
+            'x_show_form' : 'PAYMENT_FORM' # required to stay compatible with authorize.net
+    }
+
+    PAYMENT_TRANSACTION_KEY = None # can be found on the payment page you created

@@ -1,0 +1,16 @@
+{% extends 'shop/base_shop.html' %}
+{% block shop_content %}
+  <h3 class="categoryHeading">ORDER COMPLETED</h3>
+
+{% if order.is_empty %} 
+<h2>You placed an empty order.</h2>
+{% else %}
+    {% with order.orderitem_set.all as items %}
+    {% with order as cart_or_order %}
+        {% include 'shop/itemized_display.html' %}
+    {% endwith %}
+    {% endwith %}
+
+{% endif %}
+    
+{% endblock %}
