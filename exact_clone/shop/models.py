@@ -27,7 +27,7 @@ class OrderItem(models.Model):
 class OrderManager(models.Manager):
     def from_cart(self, cart):
         '''
-        Get the current cart from the request.
+        Get the current order from the cart.
         If none exists then create it.
         '''
         order = Order()
