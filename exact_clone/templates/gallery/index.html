@@ -17,7 +17,9 @@
             <li class="vertical_item">
 	  <p class="prodImageLabel">
           {{photo.title}}<br/>
-	    <strong>$499.99</strong>
+          {% if photo.product %}
+              <strong>${{photo.product.price|floatformat:2}}</strong>
+          {% endif %}
 	  </p>
           </li>
         </ul>
