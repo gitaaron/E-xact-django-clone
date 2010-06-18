@@ -12,5 +12,25 @@
     {% endwith %}
 
 {% endif %}
-    
+
+<div id="cartMenu">
+<hr/>
+<a href="/">CONTINUE SHOPPING</a>&nbsp;&nbsp;&nbsp;
+
+<a href="{% url exact_clone.shop.views.empty_cart %}">EMPTY CART</a>&nbsp;&nbsp;&nbsp;
+
+<a href="javascript:void(0);" onclick="document.getElementById('checkoutForm').submit();" >CHECKOUT</a>
+
+<form id="checkoutForm" style="display:none" method="post" action="https://checkout.e-xact.com/payment">
+{% for key,setting in payment_settings.items %}
+    <input type="hidden" name="{{key}}" value="{{setting}}" />
+{% endfor %}
+</form>
+
+
+</div>
+
+
+
+
 {% endblock %}

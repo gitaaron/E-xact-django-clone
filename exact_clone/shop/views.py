@@ -11,15 +11,19 @@ from exact_clone.shop.models import Cart, Product, Order
 def display_cart(request):
     return direct_to_template(request, 'shop/cart.html', {'payment_settings':_get_payment_settings()})
 
-def checkout(request):
+def payment_notification(request):
     '''
+    Validate the order.
     Create an order from the cart.
     Clear the cart and redirect to a success page.
     '''
+    # @TODO validation code will go here
+
     cart = Cart.objects.from_request(request)
     order = Order.objects.from_cart(cart)
     cart.remove_all_items()
     return HttpResponseRedirect(urlresolvers.reverse('exact_clone.shop.views.display_order', args=[order.id,]))
+
 
 def display_order(request, order_id):
     try:
@@ -76,10 +80,9 @@ def _get_hash_string(payment_settings):
 
 def _get_hash(payment_settings):
     # Instantiate hmac with Transaction key (HMAC-MD5)
-    digest_maker = hmac.new(settings.PAYMENT_TRANSACTION_KEY, '', hashlib.sha1)
+    digest_maker = hmac.new(settings.PAYMENT_TRANSACTION_KEY, '', hashlib.md5) # NOTE: by default the payment page is set up to use md5, change this to sha1 if you generated your keys that way
     data = _get_hash_string(payment_settings)
     digest_maker.update(data)
     x_fp_hash = digest_maker.hexdigest()
     return x_fp_hash
-
 

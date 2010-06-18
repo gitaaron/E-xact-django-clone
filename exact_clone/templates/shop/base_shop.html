@@ -14,28 +14,7 @@
 
                                     {% block shop_content %} {% endblock %}
  
-  <div id="cartMenu">
-    <hr/>
-    <a href="/">CONTINUE SHOPPING</a>&nbsp;&nbsp;&nbsp;
-    
-    <a href="{% url exact_clone.shop.views.empty_cart %}">EMPTY CART</a>&nbsp;&nbsp;&nbsp;
-    
-    <a href="{% url exact_clone.shop.views.checkout %}">CHECKOUT</a>
 
-    
-  </div>
-
-  <div>
-    <h1>paymentsettings</h1>
-
-    <form method="post" action="https://checkout.e-xact.com/payment">
-    {% for key,setting in payment_settings.items %}
-        <input type="hidden" name="{{key}}" value="{{setting}}" />
-    {% endfor %}
-    <input type="submit" value="checkout" />
-    </form>
-</ul>
-  </div>
 
 </div>
 

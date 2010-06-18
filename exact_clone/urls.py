@@ -36,6 +36,6 @@ urlpatterns = patterns('',
     (r'^shop/display_cart$', 'exact_clone.shop.views.display_cart'),
     (r'^shop/display_order/(?P<order_id>\d+)$', 'exact_clone.shop.views.display_order'),
     (r'^shop/add_item$', 'exact_clone.shop.views.add_item'),
-    (r'^shop/checkout$', 'exact_clone.shop.views.checkout'),
     (r'^shop/empty_cart$', 'exact_clone.shop.views.empty_cart'),
+    (r'^shop/payment_notification$', 'exact_clone.shop.views.payment_notification'),
 )
