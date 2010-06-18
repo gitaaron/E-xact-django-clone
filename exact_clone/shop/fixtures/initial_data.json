@@ -1,0 +1,1 @@
+[{"pk": 2, "model": "shop.product", "fields": {"photo": 2, "price": "210"}}, {"pk": 3, "model": "shop.product", "fields": {"photo": 1, "price": "150"}}, {"pk": 1, "model": "shop.cart", "fields": {"date_time_created": "2010-06-18 11:20:08"}}, {"pk": 2, "model": "shop.cart", "fields": {"date_time_created": "2010-06-18 11:20:28"}}]
